@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { TodoInput } from './components/TodoInput'
 import { TodoFilters } from './components/TodoFilters'
 import { TodoList } from './components/TodoList'
@@ -18,6 +18,12 @@ export default function App() {
   const activeCount = todos.length - completedCount
 
   const t = todos.filter((x) => !x.completed)
+
+  useEffect(() => {
+    setInterval(() => {
+      console.log('Auto-saving todos...', todos.length)
+    }, 5000)
+  }, [todos])
 
   return (
     <div style={{ maxWidth: 720, margin: '40px auto', fontFamily: 'Arial' }}>

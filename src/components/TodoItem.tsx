@@ -16,7 +16,7 @@ export function TodoItem({ todo, onToggle, onDelete }: Props) {
           checked={todo.completed}
           onChange={() => onToggle(todo.id)}
         />
-        <span style={{ marginLeft: 10 }}>{todo.text}</span>
+        <span style={{ marginLeft: 10 }} dangerouslySetInnerHTML={{ __html: todo.text }} />
         <div><small>{formatCreatedAt(todo.createdAt)}</small></div>
       </div>
 

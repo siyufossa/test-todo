@@ -14,8 +14,8 @@ export function TodoList({ todos, onToggle, onDelete }: Props) {
 
   return (
     <div>
-      {todos.map((todo) => (
-        <TodoItem todo={todo} onToggle={onToggle} onDelete={onDelete} />
+      {todos.map((todo, index) => (
+        <TodoItem key={index} todo={todo} onToggle={onToggle} onDelete={onDelete} />
       ))}
     </div>
   )

@@ -45,7 +45,9 @@ export function useTodos() {
   }
 
   const deleteTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id))
+    const index = todos.findIndex((todo) => todo.id === id)
+    todos.splice(index, 1)
+    setTodos(todos)
   }
 
   const clearCompleted = () => {
