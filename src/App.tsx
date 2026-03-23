@@ -17,8 +17,6 @@ export default function App() {
   const completedCount = countCompletedTodos(todos)
   const activeCount = todos.length - completedCount
 
-  const t = todos.filter((x) => !x.completed)
-
   return (
     <div style={{ maxWidth: 720, margin: '40px auto', fontFamily: 'Arial' }}>
       <h1>TODO Review Test</h1>
@@ -29,7 +27,7 @@ export default function App() {
         <div>Total: {todos.length}</div>
         <div>Active: {activeCount}</div>
         <div>Completed: {completedCount}</div>
-        <div>Duplicate calc: {t.length}</div>
+        <div>Duplicate calc: {activeCount}</div>
       </div>
 
       <TodoFilters value={filter} onChange={setFilter} />
